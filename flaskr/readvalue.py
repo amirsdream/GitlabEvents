@@ -27,10 +27,10 @@ def main():
     list = testapp.readVariable(variable="test")
     list = json.loads(list)
 
-    sorted_db_list= {k: v for k, v in sorted(list.items(), key=lambda item: item[1])}
+    sorted_list= {k: v for k, v in sorted(list.items(), key=lambda item: item[1])}
 
-    updated_db_list = json.dumps(list)
-    print(testapp.updateVariable(variable="test",value=updated_db_list))
+    updated_list = json.dumps(list)
+    print(testapp.updateVariable(variable="test",value=updated_list))
     print(testapp.readVariable(variable="test"))
 
 main()
