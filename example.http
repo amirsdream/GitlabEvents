@@ -1,0 +1,39 @@
+GET http://127.0.0.1:5000/db_test.yml
+
+###
+
+POSt http://127.0.0.1:5000/ 
+content-type: application/json
+
+{
+    "name": "amir",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+###
+
+POSt http://192.168.0.73/api/v4/projects/1/jobs/347/play
+PRIVATE-TOKEN: 8guZLimJTpQ1racFZ5SC
+
+{
+    "variables": [
+            { "key": "test1", "value" : "VALUE1" },
+            { "key": "test2", "value" : "VALUE2" },
+        ],
+}
+
+
+###
+curl --request POST  --header "PRIVATE-TOKEN: 8guZLimJTpQ1racFZ5SC" "http://@192.168.0.73/api/v4/projects/1/jobs/325/play"
+
+###
+
+POSt http://127.0.0.1:5000/ 
+PRIVATE-TOKEN: 8guZLimJTpQ1racFZ5SC
+
+{
+    "variables[test1]":"testvalue",
+    "variables[test2]":"testvalue2"
+}
+
+
