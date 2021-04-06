@@ -14,14 +14,14 @@ app.config["DEBUG"] = True
 
 @app.route('/db_test.yml/', methods=['GET'])
 def getevents():
-    time.sleep(120)
     response= \
 """
 db_test1:
+    resource_group: db_1
     tags: 
         - runner
-    when: manual
     script:
+        - sleep 30
         - echo 1
         - echo 2
 """
