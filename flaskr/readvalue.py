@@ -24,12 +24,12 @@ class TestApp:
 
 def main():
     testapp = TestApp(url="192.168.0.73", projectId=1, token="8guZLimJTpQ1racFZ5SC" )
-    db_list = testapp.readVariable(variable="test")
-    db_list = json.loads(db_list)
+    list = testapp.readVariable(variable="test")
+    list = json.loads(list)
 
-    sorted_db_list= {k: v for k, v in sorted(db_list.items(), key=lambda item: item[1])}
+    sorted_db_list= {k: v for k, v in sorted(list.items(), key=lambda item: item[1])}
 
-    updated_db_list = json.dumps(db_list)
+    updated_db_list = json.dumps(list)
     print(testapp.updateVariable(variable="test",value=updated_db_list))
     print(testapp.readVariable(variable="test"))
 
